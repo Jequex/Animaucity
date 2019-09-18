@@ -1,4 +1,14 @@
 $(document).ready(()=>{
+
+    $.fn.slider = function(){
+        let p = $('#img1').attr('src');
+        if(p == "./images/tiger.jpg"){
+            $('#img1').attr('src',"./images/croc.jpg");
+        }else{
+            $('#img1').attr('src',"./images/tiger.jpg");
+        }
+    }
+
     $.fn.reload = function(){
         $('#tbody').empty()
         $.ajax({
@@ -154,7 +164,8 @@ $(document).ready(()=>{
     })
 
     $('#ok').click((e)=>{
-        $('.form6').css("visibility","hidden")
+        $('.form6').css("visibility","hidden");
+        e.preventDefault()
     })
     
     $('#save').click((e)=>{
@@ -179,20 +190,22 @@ $(document).ready(()=>{
 
     $('#log-in').click((e)=>{
         e.preventDefault();
-        let userName = $('#userName').val();
-        let passWord = $('#passWord').val();
+        var userName = $('#username').val();
+        var passWord = $('#password').val();
         $.ajax({
             url: 'http://localhost:3000/Admin',
-            method: 'get',
+            method: 'GET',
         }).done((e)=>{
             for(let q = 0; q < e.length; q++){
-                if(e[q].userName == userName && e[q].passWord == passWord){
-                    window.location.replace('localhost:3000/Animals')
+                if(e[q].username == userName && e[q].password == passWord){
+                    $(window).location.replace('http://localhost:3000/dataPage.html');
                 }
             }
-            $('#login').css("visibility","hidden")
+            $('.form4').css("visibility","hidden")
+            $('.form5').css("visibility","hidden")
             $('.form6').css("visibility","visible")
         })
     })
+    
 
 })

@@ -61,11 +61,12 @@
     visibility: hidden;
 }
 .form6{
-    visibility: visible;
+    visibility: hidden;
     z-index: 100;
     position: fixed; 
     top: 30%;
     left: 40%;
+    width: 20%;
 }
 #signuplogin{
     float: right;
