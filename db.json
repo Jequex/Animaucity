@@ -1,0 +1,114 @@
+{
+  "Animals": [
+    {
+      "Name": "Leopard",
+      "Type": "Carnivore",
+      "Age": "60",
+      "Sound": "Sawing Roar",
+      "Habitat": "Land",
+      "id": 3
+    },
+    {
+      "Name": "Elephant",
+      "Type": "Herbivore",
+      "Age": "60",
+      "Sound": "Trumpet",
+      "Habitat": "Land",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "Name": "Crocodile",
+      "Type": "Carnivore",
+      "Age": "45",
+      "Sound": "None",
+      "Habitat": "Water"
+    },
+    {
+      "Name": "Eagle",
+      "Type": "Carnivore",
+      "Age": "35",
+      "Sound": "Roar",
+      "Habitat": "Air",
+      "id": 6
+    },
+    {
+      "Name": "Zebra",
+      "Type": "Herbivore",
+      "Age": "30",
+      "Sound": "Bray",
+      "Habitat": "Land",
+      "id": 7
+    },
+    {
+      "Name": "Chimpanzee",
+      "Type": "Omnivore",
+      "Age": "40",
+      "Sound": "Snort",
+      "Habitat": "Land",
+      "id": 9
+    },
+    {
+      "Name": "Monkey",
+      "Type": "Omnivore",
+      "Age": "12",
+      "Sound": "Snort",
+      "Habitat": "Land",
+      "id": 10
+    },
+    {
+      "Name": "Hipopotamus",
+      "Type": "Herbivore",
+      "Age": "34",
+      "Sound": "Grunt",
+      "Habitat": "Land",
+      "id": 11
+    },
+    {
+      "Name": "Vulture",
+      "Type": "Carnivore",
+      "Age": "69",
+      "Sound": "Kwak-Kwak",
+      "Habitat": "Air",
+      "id": 12
+    },
+    {
+      "Name": "Antelope",
+      "Type": "Herbivore",
+      "Age": "20",
+      "Sound": "Brays",
+      "Habitat": "Land",
+      "id": 13
+    },
+    {
+      "Name": "Kangaroo",
+      "Type": "Herbivore",
+      "Age": "22",
+      "Sound": "Brays",
+      "Habitat": "Land",
+      "id": 15
+    },
+    {
+      "Name": "",
+      "Type": "Carnivore",
+      "Age": "",
+      "Sound": "",
+      "Habitat": "Land",
+      "id": 16
+    },
+    {
+      "Name": "",
+      "Type": "Carnivore",
+      "Age": "",
+      "Sound": "",
+      "Habitat": "Land",
+      "id": 17
+    }
+  ],
+  "Admin":[
+    {
+      "userName": "Jequex",
+      "passWord": "Nonny"
+    }
+  ]
+}

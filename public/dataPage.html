@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animaucity</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/source.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="body">
+    <header class="header-area">
+        <div style="padding: 2%;" class="bg-info">
+            <div class="">
+                <h1 class="logo">
+                    ANIMAU-<span class="logo1">CITY</span>
+                </h1>
+            </div>
+            <div>
+                <div class="text-light topic">
+                    ZOO MANAGEMENT SYSTEM
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="padding-right: 10%;padding-top: 5%;padding-bottom: 2%">
+        <a href="./#" class="btn btn-bg btn-primary" style="float: right" id="create">Create New</a><br>
+    </div>
+    <div >
+        <div class="col-md-10 container justify-content-md-center hello">
+            <table class="table table-striped table-hover">
+                <caption>Animals and their individual data</caption>
+                    <thead class="thead-dark">
+                        <th>S/No</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Age</th>
+                        <th>Sound</th>
+                        <th>Habitat</th>
+                        <th>View/Edit</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody id="tbody">
+            
+                    </tbody>
+            </table>
+        
+        </div>
+
+        <div class="form1">
+            <div class="col-md-12 bg-dark">
+                <div class="justify-content-md-center">
+                <form action="" method="" class="pad1">
+                    <button type="" class="btn btn-danger btn-sm" id="close1">close</button><br>
+                    <div class="justify-content-md-center">
+                        <div class="form-group col-md-12">
+                            <input type="hidden" name=""><br>
+                            <input type="text" name="Name" id="Name" placeholder="Name" class="form-control"><br>
+                            <select name="Type" id="Type" class="form-control">
+                                <option value="Carnivore">Carnivore</option>
+                                <option value="Herbivore">Herbivore</option>
+                                <option value="Omnivore">Omnivore</option>
+                            </select><br>
+                            <input type="number" name="Age" id="Age" placeholder="Age" class="form-control"><br>
+                            <input type="text" name="Name" id="Sound" placeholder="Sound" class="form-control"><br>
+                            <select name="Type" id="Habitat" class="form-control">
+                                <option value="Land">Land</option>
+                                <option value="Water">Water</option>
+                                <option value="Air">Air</option>
+                            </select><br>
+                            <button type="submit" class="btn btn-success" id="save">Save</button><br>
+                            <input type="hidden" name="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group form3">
+        <div class="col-md-10 bg-dark">
+            <div class="justify-content-md-center">
+                <form action="" class="pad1">
+                    <p style="color: ghostwhite; font-family: cursive">Do you wish to really delete this record?</p>
+                    <div class="form-row">
+                        <div class="col">
+                        <button class="btn btn-success" id="yes">Yes</button>
+                        </div>
+                        <div class="col">
+                        <button class="btn btn-danger" id="no">No</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="form2">
+            <div class="col-md-12 bg-dark">
+                <div class="justify-content-md-center">
+                <form action="" method="" class="pad1">
+                    <button type="" class="btn btn-danger btn-sm" id="close2">close</button><br>
+                    <div class="justify-content-md-center">
+                        <div class="form-group col-md-12">
+                            <input type="hidden" name=""><br>
+                            <input type="text" name="Name" id="Name2" placeholder="Name" class="form-control"><br>
+                            <select name="Type" id="Type2" class="form-control">
+                                <option value="Carnivore">Carnivore</option>
+                                <option value="Herbivore">Herbivore</option>
+                                <option value="Omnivore">Omnivore</option>
+                            </select><br>
+                            <input type="number" name="Age" id="Age2" placeholder="Age" class="form-control"><br>
+                            <input type="text" name="Name" id="Sound2" placeholder="Sound" class="form-control"><br>
+                            <select name="Type" id="Habitat2" class="form-control">
+                                <option value="Land">Land</option>
+                                <option value="Water">Water</option>
+                                <option value="Air">Air</option>
+                            </select><br>
+                            <button type="submit" class="btn btn-success" id="save2">Update</button><br>
+                            <input type="hidden" name="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

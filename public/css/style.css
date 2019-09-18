@@ -1,0 +1,84 @@
+.form1{
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+    top: 30px;
+    left: 28%;
+    width: 600px;
+    border-radius: 2%
+}
+.form3{
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border-radius: 2%;
+}
+.pad1{
+    padding: 4%;
+}
+.form2{
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+    top: 30px;
+    left: 28%;
+    width: 600px;
+    border-radius: 2%
+}
+.text-light{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.logo{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    text-decoration: underline overline;
+    text-decoration-color: black;
+    font-size: 8vw
+}
+.logo1{
+    color: black;
+    text-decoration: underline overline;
+    text-decoration-color: whitesmoke;
+    font-size: 8vw
+}
+.topic{
+    font-size: 2vw
+}
+.form4{
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    visibility: hidden;
+}
+.form5{
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    visibility: hidden;
+}
+.form6{
+    visibility: visible;
+    z-index: 100;
+    position: fixed; 
+    top: 30%;
+    left: 40%;
+}
+#signuplogin{
+    float: right;
+}
+#close1{
+    float: right;
+}
+#close2{
+    float: right;
+}
+#close3{
+    float: right;
+}
+#close4{
+    float: right;
+}
