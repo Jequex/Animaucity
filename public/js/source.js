@@ -70,6 +70,7 @@ $(document).ready(()=>{
 
     $('#close4').on('click',(e)=>{
         $('.form5').css("visibility","hidden");
+        $('.table').fadeTo('fast', 1)
         e.preventDefault()
     })
 
@@ -94,6 +95,12 @@ $(document).ready(()=>{
         e.preventDefault()
         $('.table').fadeTo('fast', 0.4)
         $('.form1').css('visibility',"visible");
+    })
+
+    $('#createaccount').on('click',(e)=>{
+        e.preventDefault()
+        $('.table').fadeTo('fast', 0.4)
+        $('.form5').css('visibility',"visible");
     })
 
     $('#save').click((e)=>{
@@ -204,6 +211,57 @@ $(document).ready(()=>{
                 $('.form6').css("visibility","visible")
             }
         })
+    })
+
+    $('#sign-up').click((e)=>{
+        e.preventDefault();
+        var username = $('#username2').val();
+        var firstname = $('#firstname2').val();
+        var lastname = $('#lastname2').val();
+        var password = $('#password2').val();
+        var password2 = $('#password3').val();
+        var age = $('#age2').val();
+
+        $.ajax({
+            url: 'http://localhost:3000/Admin',
+            method: 'GET',
+            }).done((e)=>{
+            for(let q = 0; q < e.length; q++){
+                if(e[q].username == username){
+                    $('#output').html("Username already exists")
+                    return
+                }else if(username.length <= 3){
+                    $('#output').html("Username is too short")
+                    return
+                }else if(firstname.length <= 2){
+                    $('#output').html("Firstname is too short")
+                    return
+                }else if(lastname.length <= 2){
+                    $('#output').html("Lastname is too short")
+                    return
+                }else if(password.length < 8){
+                    $('#output').html("passwords are too short")
+                    return
+                }else if(password2 != password){
+                    $('#output').html("passwords dont match")
+                    return
+                }else if(parseInt(age) < 18 || age.length < 1){
+                    $('#output').html("you are under 18 years")
+                    return
+                }
+            } $.ajax({
+                url: 'http://localhost:3000/Admin',
+                method: 'POST',
+                data:{
+                    username, firstname, lastname, password, age
+                }
+            }).done((e)=>{
+                alert("successsful")
+                $('.form5').css("visibility","hidden")
+                $('.table').fadeTo('fast', 1)
+            })
+        })
+
     })
 
     $('#logoutbtn').click((e)=>{

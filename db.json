@@ -75,8 +75,20 @@
   ],
   "Admin": [
     {
+      "id": 1,
       "username": "Jequex",
-      "password": "Nonny"
+      "firstname": "Chukwunonso",
+      "lastname": "Onyejekwe",
+      "password": "Nonny",
+      "age": 27
+    },
+    {
+      "username": "Jequex1",
+      "firstname": "Chukwunonso",
+      "lastname": "Onyejekwe",
+      "password": "Nonny123",
+      "age": "19",
+      "id": 2
     }
   ]
 }
