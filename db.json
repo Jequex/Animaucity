@@ -1,28 +1,12 @@
 {
   "Animals": [
     {
-      "Name": "Leopard",
-      "Type": "Carnivore",
-      "Age": "60",
-      "Sound": "Sawing Roar",
-      "Habitat": "Land",
-      "id": 3
-    },
-    {
       "Name": "Elephant",
       "Type": "Herbivore",
       "Age": "60",
       "Sound": "Trumpet",
       "Habitat": "Land",
       "id": 4
-    },
-    {
-      "id": 5,
-      "Name": "Crocodile",
-      "Type": "Carnivore",
-      "Age": "45",
-      "Sound": "None",
-      "Habitat": "Water"
     },
     {
       "Name": "Eagle",
@@ -87,25 +71,9 @@
       "Sound": "Brays",
       "Habitat": "Land",
       "id": 15
-    },
-    {
-      "Name": "",
-      "Type": "Carnivore",
-      "Age": "",
-      "Sound": "",
-      "Habitat": "Land",
-      "id": 16
-    },
-    {
-      "Name": "",
-      "Type": "Carnivore",
-      "Age": "",
-      "Sound": "",
-      "Habitat": "Land",
-      "id": 17
     }
   ],
-  "Admin":[
+  "Admin": [
     {
       "username": "Jequex",
       "password": "Nonny"

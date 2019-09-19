@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Animaucity</title>
     <script src="./js/jquery-3.4.1.js"></script>
-    <script src="./js/bootstrap.js"></script>
     <script src="./js/source.js"></script>
+    <script src="./js/loader.js"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -24,8 +24,20 @@
                     ZOO MANAGEMENT SYSTEM
                     <span>
                         <button class="btn btn-warning" id="signuplogin">
-                            LogIn/SignUp
+                            LogIn
                         </button>
+                        <button class="btn btn-warning" id="continueDataPage">
+                            Continue
+                        </button>
+                        <script>
+                            let p = window.localStorage.getItem('Username');
+                            if(p != ""){
+                                $('#signuplogin').css("visibility","hidden")
+                                $('#continueDataPage').css("visibility","visible")
+                            }else{
+                                $('#signuplogin').css("visibility","visible")
+                            }
+                        </script>
                     </span>
                 </div>
             </div>
@@ -49,7 +61,7 @@
                         <input type="text" name="userName" id="username" placeholder="Username" required="required" class="form-control"><br>
                         <input type="password" name="passWord" id="password" placeholder="********" required="required" class="form-control"><br>
                         <button type="submit" class="btn btn-success" id="log-in">Log In</button>
-                        <button type="submit" class="btn btn-warning" id="signup">Sign Up</button><br>
+                        <!-- <button type="submit" class="btn btn-warning" id="signup">Sign Up</button><br> -->
                         <input type="hidden" name="">
                     </div>
                 </div>
@@ -57,7 +69,7 @@
         </div>
     </div>
 
-    <div class="form5">
+    <!-- <div class="form5">
         <div class="col-md-12 bg-dark">
             <div class="justify-content-md-center">
             <form action="" method="" class="pad1">
@@ -79,7 +91,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 
     
     <div class="form-group form6">

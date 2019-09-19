@@ -1,14 +1,5 @@
 $(document).ready(()=>{
 
-    $.fn.slider = function(){
-        let p = $('#img1').attr('src');
-        if(p == "./images/tiger.jpg"){
-            $('#img1').attr('src',"./images/croc.jpg");
-        }else{
-            $('#img1').attr('src',"./images/tiger.jpg");
-        }
-    }
-
     $.fn.reload = function(){
         $('#tbody').empty()
         $.ajax({
@@ -186,10 +177,15 @@ $(document).ready(()=>{
             $('.form1').css("visibility","hidden")
             $('.table').fadeTo('fast', 1)
         })
+
+    })
+
+    
+    $('#homebtn').click((e)=>{
+        window.location.replace('http://localhost:3000/');
     })
 
     $('#log-in').click((e)=>{
-        e.preventDefault();
         var userName = $('#username').val();
         var passWord = $('#password').val();
         $.ajax({
@@ -198,14 +194,39 @@ $(document).ready(()=>{
         }).done((e)=>{
             for(let q = 0; q < e.length; q++){
                 if(e[q].username == userName && e[q].password == passWord){
-                    $(window).location.replace('http://localhost:3000/dataPage.html');
+                    localStorage.setItem("Username", userName)
                 }
+            }if (window.localStorage.getItem("Username") != ""){
+                window.location.replace('http://localhost:3000/dataPage.html');
+            }else{
+                $('.form4').css("visibility","hidden")
+                $('.form5').css("visibility","hidden")
+                $('.form6').css("visibility","visible")
             }
-            $('.form4').css("visibility","hidden")
-            $('.form5').css("visibility","hidden")
-            $('.form6').css("visibility","visible")
         })
     })
+
+    $('#logoutbtn').click((e)=>{
+        localStorage.setItem("Username", "")
+        window.location.replace('http://localhost:3000/')
+    })
     
+    $('#continueDataPage').click((e)=>{
+        window.location.replace('http://localhost:3000/dataPage.html')
+    })
+
 
 })
+
+function slider(){
+    let p = $('#img1').attr('src');
+    if(p == "./images/tiger.jpg"){
+        $('#img1').attr('src',"./images/croc.jpg");
+    }else if(p == "./images/croc.jpg"){
+        $('#img1').attr('src',"./images/zebra.jpg");
+    }else{
+        $('#img1').attr('src',"./images/tiger.jpg");
+    }
+}
+
+window.setInterval(slider, 5000)
