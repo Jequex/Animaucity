@@ -1,14 +1,6 @@
 {
   "Animals": [
     {
-      "Name": "Elephant",
-      "Type": "Herbivore",
-      "Age": "60",
-      "Sound": "Trumpet",
-      "Habitat": "Land",
-      "id": 4
-    },
-    {
       "Name": "Eagle",
       "Type": "Carnivore",
       "Age": "35",
@@ -71,6 +63,22 @@
       "Sound": "Brays",
       "Habitat": "Land",
       "id": 15
+    },
+    {
+      "Name": "Elephant",
+      "Type": "Herbivore",
+      "Age": "40",
+      "Sound": "Trumpet",
+      "Habitat": "Land",
+      "id": 16
+    },
+    {
+      "Name": "Jaguar",
+      "Type": "Carnivore",
+      "Age": "40",
+      "Sound": "Roar",
+      "Habitat": "Land",
+      "id": 17
     }
   ],
   "Admin": [
@@ -89,6 +97,14 @@
       "password": "Nonny123",
       "age": "19",
       "id": 2
+    },
+    {
+      "username": "Jequex17",
+      "firstname": "hgdghfg",
+      "lastname": "uguiyhi",
+      "password": "Nonny123",
+      "age": "888",
+      "id": 3
     }
   ]
 }

@@ -1,7 +1,7 @@
 $(document).ready(()=>{
 
     $.fn.reload = function(){
-        $('#tbody').empty()
+        $('#tbody').empty();
         $.ajax({
             url: 'http://localhost:3000/Animals',
             method: 'GET',
@@ -103,25 +103,38 @@ $(document).ready(()=>{
         $('.form5').css('visibility',"visible");
     })
 
+    
     $('#save').click((e)=>{
         e.preventDefault();
-        let Name = $('#Name').val();
-        let Type = $('#Type').val();
-        let Age = $('#Age').val();
-        let Sound = $('#Sound').val();
-        let Habitat = $('#Habitat').val();
-        $.ajax({
-            url: 'http://localhost:3000/Animals',
-            method: 'post',
-            data:{
-                Name, Type, Age, Sound, Habitat
-            }
-        }).done((e)=>{
-            $('.form1').css("visibility","hidden")
-            $('.table').fadeTo('fast', 1)
-            $('#tbody').reload()
+        var Name = $('#Name').val();
+        var Type = $('#Type').val();
+        var Age = $('#Age').val();
+        var Sound = $('#Sound').val();
+        var Habitat = $('#Habitat').val();
+
+        if(Name.length <= 2){
+            $('#outputform1').html("Name is too short")
+            return
+        }else if(Age < 1){
+            $('#outputform1').html("Animal is too young")
+            return
+        }else if(Sound.length <= 2){
+            $('#outputform1').html("Sound is not loud enough")
+            return
+        }else{$.ajax({
+                url: 'http://localhost:3000/Animals',
+                method: 'POST',
+                data:{
+                    Name, Type, Age, Sound, Habitat
+                }
+            }).done((e)=>{
+                $('.form1').css("visibility","hidden")
+                $('#tbody').reload()
+                $('.table').fadeTo('fast', 1)
+            })
+        }
         })
-    })
+        
 
     $('#save2').click((e)=>{
         e.preventDefault();
@@ -165,28 +178,6 @@ $(document).ready(()=>{
         $('.form6').css("visibility","hidden");
         e.preventDefault()
     })
-    
-    $('#save').click((e)=>{
-        e.preventDefault();
-        let Name = $('#Name').val();
-        let Type = $('#Type').val();
-        let Age = $('#Age').val();
-        let Sound = $('#Sound').val();
-        let Habitat = $('#Habitat').val();
-        $.ajax({
-            url: 'http://localhost:3000/Animals',
-            method: 'post',
-            data:{
-                Name, Type, Age, Sound, Habitat
-            }
-        }).done((e)=>{
-            $('#tbody').reload()
-            $('.form1').css("visibility","hidden")
-            $('.table').fadeTo('fast', 1)
-        })
-
-    })
-
     
     $('#homebtn').click((e)=>{
         window.location.replace('http://localhost:3000/');
