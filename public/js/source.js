@@ -1,9 +1,34 @@
 $(document).ready(()=>{
 
-    $.fn.reload = function(){
+    $('#search1').click((e)=>{
+        e.preventDefault();
+        let Namely = $('#search').val();
+        console.log(Namely)
+        $.ajax({
+            url: `http://localhost:3000/Bucketlists/?Name=${Namely}`,
+            method: 'GET',
+        }).done((e)=>{            
+        $('#tbody').empty();
+        for(let i = 0; i < e.length; i++){
+            $('#tbody').append(
+                `<tr class="clickable-row">
+                    <td>${i+1}</td>
+                    <td>${e[i].Name}</td>
+                    <td>${e[i].Date_Created}</td>
+                    <td>${e[i].Date_Modified}</td>
+                    <td>${e[i].Created_By}</td>
+                    <td><button type="" class="btn btn-success btn-view" id="${e[i].id}">View&Edit</button></td>  
+                    <td><button type="" class="btn btn-danger btn-delete" id="${e[i].id}">Delete</button></td>   
+                </tr>`
+            )
+            }
+        })
+    })
+
+    $.fn.onload = function(){
         $('#tbody').empty();
         $.ajax({
-            url: 'http://localhost:3000/Animals',
+            url: 'http://localhost:3000/Bucketlists',
             method: 'GET',
             }).done((e)=>{
             for(let i = 0; i < e.length; i++){
@@ -11,32 +36,26 @@ $(document).ready(()=>{
                 `<tr class="clickable-row">
                     <td>${i+1}</td>
                     <td>${e[i].Name}</td>
-                    <td>${e[i].Type}</td>
-                    <td>${e[i].Age}</td>
-                    <td>${e[i].Sound}</td>
-                    <td>${e[i].Habitat}</td>
-                    <td><button type="" class="btn btn-success btn-view" id="view-${e[i].id}">View&Edit</button></td>  
-                    <td><button type="" class="btn btn-danger btn-delete" id="delete-${e[i].id}">Delete</button></td>   
+                    <td>${e[i].Date_Created}</td>
+                    <td>${e[i].Date_Modified}</td>
+                    <td>${e[i].Created_By}</td>
+                    <td><button type="" class="btn btn-success btn-view" id="${e[i].id}">View&Edit</button></td>  
+                    <td><button type="" class="btn btn-danger btn-delete" id="${e[i].id}">Delete</button></td>   
                 </tr>`
             )
             }
 
             $('.btn-view').on('click',(e)=>{
-                y = e.target.id.split('view-').join('');
+                y = e.target.id;
                 $.ajax({
-                    url: 'http://localhost:3000/Animals',
+                    url: `http://localhost:3000/Bucketlists/${y}`,
                     method: 'GET',
                     }).done((e)=>{
-                    for(let i = 0; i < e.length; i++){
-                        if(e[i].id == y){
-                            $('#Name2').val(`${e[i].Name}`)
-                            $('#Type2').val(`${e[i].Type}`)
-                            $('#Age2').val(`${e[i].Age}`)
-                            $('#Sound2').val(`${e[i].Sound}`)
-                            $('#Habitat2').val(`${e[i].Habitat}`)
-                        }
-                    }
-                })
+                            $('#Name2').val(`${e.Name}`)
+                            $('#Date_Created2').val(`${e.Date_Created}`)
+                            $('#Date_Modified2').val(`${e.Date_Modified}`)
+                            $('#Created_By2').val(`${e.Created_By}`)
+                    })
                 $(window).scrollTop(0)
                 $('.table').fadeTo('fast', 0.4)
                 $('.form2').css('visibility',"visible");
@@ -51,7 +70,7 @@ $(document).ready(()=>{
         })
     }
     
-    $('#tbody').reload()
+    $('#tbody').onload()
 
     $('#close').on('click',(e)=>{
         $('.form1').css('visibility',"hidden");
@@ -105,27 +124,24 @@ $(document).ready(()=>{
 
     
     $('#save').click((e)=>{
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
         e.preventDefault();
         var Name = $('#Name').val();
-        var Type = $('#Type').val();
-        var Age = $('#Age').val();
-        var Sound = $('#Sound').val();
-        var Habitat = $('#Habitat').val();
+        var Date_Created = `${day + "/" + month + "/" + year}`;
+        var Date_Modified = "nil";
+        var Created_By = $('#Created_By').val();
 
         if(Name.length <= 2){
             $('#outputform1').html("Name is too short")
             return
-        }else if(Age < 1){
-            $('#outputform1').html("Animal is too young")
-            return
-        }else if(Sound.length <= 2){
-            $('#outputform1').html("Sound is not loud enough")
-            return
         }else{$.ajax({
-                url: 'http://localhost:3000/Animals',
+                url: 'http://localhost:3000/Bucketlists',
                 method: 'POST',
                 data:{
-                    Name, Type, Age, Sound, Habitat
+                    Name, Date_Created, Date_Modified, Created_By,
                 }
             }).done((e)=>{
                 $('.form1').css("visibility","hidden")
@@ -137,17 +153,20 @@ $(document).ready(()=>{
         
 
     $('#save2').click((e)=>{
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
         e.preventDefault();
         let Name = $('#Name2').val();
-        let Type = $('#Type2').val();
-        let Age = $('#Age2').val();
-        let Sound = $('#Sound2').val();
-        let Habitat = $('#Habitat2').val();
+        let Date_Created = $('#Date_Created2').val();
+        let Date_Modified = `${day + "/" + month + "/" + year}`;
+        let Created_By = $('#Created_By2').val();
         $.ajax({
-            url: `http://localhost:3000/Animals/${y}`,
+            url: `http://localhost:3000/Bucketlists/${y}`,
             method: 'put',
             data:{
-                Name, Type, Age, Sound, Habitat
+                Name, Date_Created, Date_Modified, Created_By,
             }
         }).done((e)=>{
             $('.form2').css("visibility","hidden")
@@ -158,10 +177,10 @@ $(document).ready(()=>{
 
     $('#yes').click((e)=>{
             e.preventDefault();
-            let id = x.split('delete-').join('')
+            let id = x;
             $('.form3').css("visibility","hidden")
             $.ajax({
-                url: `http://localhost:3000/Animals/${id}`,
+                url: `http://localhost:3000/Bucketlists/${id}`,
                 method: 'delete',
             }).done((e)=>{
             $('.tbody').reload() 
@@ -187,7 +206,7 @@ $(document).ready(()=>{
         var userName = $('#username').val();
         var passWord = $('#password').val();
         $.ajax({
-            url: 'http://localhost:3000/Admin',
+            url: 'http://localhost:3000/Auth/',
             method: 'GET',
         }).done((e)=>{
             for(let q = 0; q < e.length; q++){
@@ -197,8 +216,8 @@ $(document).ready(()=>{
             }if (window.localStorage.getItem("Username") != ""){
                 window.location.replace('http://localhost:3000/dataPage.html');
             }else{
-                $('.form4').css("visibility","hidden")
-                $('.form5').css("visibility","hidden")
+                $('.form4').css("visibility","none")
+                $('.form5').css("visibility","none")
                 $('.form6').css("visibility","visible")
             }
         })

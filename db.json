@@ -1,87 +1,21 @@
 {
-  "Animals": [
+  "Bucketlists": [
     {
       "Name": "Eagle",
-      "Type": "Carnivore",
-      "Age": "35",
-      "Sound": "Roar",
-      "Habitat": "Air",
-      "id": 6
+      "Date_Created": "29/1/2020",
+      "Date_Modified": "nil",
+      "Created_By": "Nonny",
+      "id": 1
     },
     {
-      "Name": "Zebra",
-      "Type": "Herbivore",
-      "Age": "30",
-      "Sound": "Bray",
-      "Habitat": "Land",
-      "id": 7
-    },
-    {
-      "Name": "Chimpanzee",
-      "Type": "Omnivore",
-      "Age": "40",
-      "Sound": "Snort",
-      "Habitat": "Land",
-      "id": 9
-    },
-    {
-      "Name": "Monkey",
-      "Type": "Omnivore",
-      "Age": "12",
-      "Sound": "Snort",
-      "Habitat": "Land",
-      "id": 10
-    },
-    {
-      "Name": "Hipopotamus",
-      "Type": "Herbivore",
-      "Age": "34",
-      "Sound": "Grunt",
-      "Habitat": "Land",
-      "id": 11
-    },
-    {
-      "Name": "Vulture",
-      "Type": "Carnivore",
-      "Age": "69",
-      "Sound": "Kwak-Kwak",
-      "Habitat": "Air",
-      "id": 12
-    },
-    {
-      "Name": "Antelope",
-      "Type": "Herbivore",
-      "Age": "20",
-      "Sound": "Brays",
-      "Habitat": "Land",
-      "id": 13
-    },
-    {
-      "Name": "Kangaroo",
-      "Type": "Herbivore",
-      "Age": "22",
-      "Sound": "Brays",
-      "Habitat": "Land",
-      "id": 15
-    },
-    {
-      "Name": "Elephant",
-      "Type": "Herbivore",
-      "Age": "40",
-      "Sound": "Trumpet",
-      "Habitat": "Land",
-      "id": 16
-    },
-    {
-      "Name": "Jaguar",
-      "Type": "Carnivore",
-      "Age": "40",
-      "Sound": "Roar",
-      "Habitat": "Land",
-      "id": 17
+      "Name": "Lion",
+      "Date_Created": "29/1/2020",
+      "Date_Modified": "nil",
+      "Created_By": "Nonny",
+      "id": 2
     }
   ],
-  "Admin": [
+  "Auth": [
     {
       "id": 1,
       "username": "Jequex",

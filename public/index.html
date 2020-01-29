@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Animaucity</title>
+    <title>Bucket List</title>
     <script src="./js/jquery-3.4.1.js"></script>
     <script src="./js/source.js"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
@@ -15,11 +15,11 @@
         <div style="padding: 2%;" class="bg-info">
             <div class="">
                 <h1 class="logo">
-                    ANIMAU-<span class="logo1">CITY</span>
+                    BUCKET-<span class="logo1">LIST</span>
                 </h1>
             </div>
                 <div class="text-light topic">
-                    ANIMALS MANAGEMENT SYSTEM
+                    The Bucket list API
                     <span>
                         <button class="btn btn-sm btn-warning" id="signuplogin">LogIn</button>
                         <button class="btn btn-sm btn-warning" id="continueDataPage">Continue</button>
@@ -27,9 +27,9 @@
                         <script>
                             let p = window.localStorage.getItem('Username');
                             if(p != ""){
-                                $('#signuplogin').css("visibility","hidden")
-                                $('#continueDataPage').css("visibility","visible")
-                                $('#logoutbtn').css("visibility","visible")
+                                $('#signuplogin').css("display","none")
+                                $('#continueDataPage').css("display","block")
+                                $('#logoutbtn').css("display","block")
                             }else{
                                 $('#signuplogin').css("visibility","visible")
                                 $('#logoutbtn').css("visibility","hidden")

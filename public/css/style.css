@@ -93,5 +93,14 @@
 }
 #continueDataPage{
     float: left;
-    visibility: hidden;
+    display: none;
+}
+#search{
+    margin-left: 18%;
+    width: 60%;
+    border-radius: 5px;
+}
+#search1{ 
+    position: absolute;
+    left: 74%
 }
