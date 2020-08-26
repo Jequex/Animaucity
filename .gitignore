@@ -1,2 +1,4 @@
+#packages to ignore
+
 package.json
 db.json
